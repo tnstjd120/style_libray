@@ -20,64 +20,61 @@ const style = css`
 `
 
 const SomeComponent = ({ children }) => (
-    <div css={style}>
-        Some Hotpink Text.
-        {children}
-    </div>
+  <div css={style}>
+    Some Hotpink Text.
+    {children}
+  </div>
 )
 
 const anotherStyle = css({
-    textDecoration: 'underline'
+  textDecoration: 'underline',
 })
 
 const AnotherComponent = () => (
-    <div css={anotherStyle}>
-        Some text with an underline.
-    </div>
+  <div css={anotherStyle}>Some text with an underline.</div>
 )
 
 const base = css`
-    background-color: #fff;
-    color: red;
-    border: 1px solid #ddd;
+  background-color: #fff;
+  color: red;
+  border: 1px solid #ddd;
 `
 
 const bgRed = css`
-    background-color: red;
-    color: #fff;
+  background-color: red;
+  color: #fff;
 `
 const bgGreen = css`
-    background-color: green;
-    color: #fff;
+  background-color: green;
+  color: #fff;
 `
 
 export default function EmotionExample() {
   return (
-      <>
-        <div css={base}>Base Set</div>
-        <div css={[base, bgRed]}>First base</div>
-        <div css={[bgRed, base, bgGreen]}>First bgRed</div>
+    <>
+      <div css={base}>Base Set</div>
+      <div css={[base, bgRed]}>First base</div>
+      <div css={[bgRed, base, bgGreen]}>First bgRed</div>
 
-        <SomeComponent>
-            <AnotherComponent />
-        </SomeComponent>
+      <SomeComponent>
+        <AnotherComponent />
+      </SomeComponent>
 
-        <div
-            css={css`
-            padding: 32px;
-            background-color: hotpink;
-            font-size: 24px; 
-            border-radius: 4px;
-            &:hover {
-                color: ${color};
-                }
-            `}
-        >
-            Hover to change color.
-        </div>
+      <div
+        css={css`
+          padding: 32px;
+          background-color: hotpink;
+          font-size: 24px;
+          border-radius: 4px;
+          &:hover {
+            color: ${color};
+          }
+        `}
+      >
+        Hover to change color.
+      </div>
 
-        <Button>Hello!</Button>
-
+      <Button>Hello!</Button>
     </>
   )
 }

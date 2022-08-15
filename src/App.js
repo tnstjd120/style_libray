@@ -1,12 +1,12 @@
-import './App.css';
-import SassExample from './components/SassExample/SassExample'
+import './App.css'
+import StyledComponentsExample from './components/StyledComponentsExample/StyledComponentsExample'
 
 function App() {
   return (
     <div className="App">
-      <SassExample />
+      <StyledComponentsExample />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
